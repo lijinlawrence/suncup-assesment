@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-// Middlewares
+// Middlewares 
 app.use(cors({
   origin: '*', // Allow all origins for testing/assessment simplicity
   methods: ['GET', 'POST'],
