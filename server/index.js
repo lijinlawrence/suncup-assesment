@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 5001;
 
 // Middlewares 
 app.use(cors({
-  origin: '*', // Allow all origins for testing/assessment simplicity
+  origin: true, // Echoes back the requesting origin dynamically
+  credentials: true,
   methods: ['GET', 'POST'],
 }));
 app.use(express.json());
@@ -121,7 +122,8 @@ app.post('/feed', async (req, res) => {
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: '*',
+    origin: true,
+    credentials: true,
     methods: ['GET', 'POST']
   }
 });
